@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/Script.js"></script>
+    <link href="Styles.css" rel="stylesheet" />
+</head>
+<body ng-app="sixthmodule">
+    <div>
+        <div ng-controller="sixCon">
+          Rows to display:  <input type="number" step="1" min="1" max="5" ng-model="rowlimit"/>
+            <br />
+            <br />
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Date of Birth</th>
+                        <th>Gender</th>
+                        <th>Salary (number)</th>
+                        <th>Salary (currency)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="empl in emp | limitTo:rowlimit">
+                        <td>{{empl.name | uppercase}}</td>
+                        <td>{{empl.dataofBirth | date:"dd/MM/yyyy"}}</td>
+                        <td>{{empl.gender | lowercase }}</td>
+                        <td>{{empl.salary | number:3}}</td>
+                        <td>{{empl.salary | currency:"£":1}}</td>
+
+                    </tr>
+
+                </tbody>
+
+
+            </table>
+
+        </div>
+    </div>
+</body>
+</html>

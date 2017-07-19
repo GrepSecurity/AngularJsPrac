@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/Script.js"></script>
+</head>
+<body ng-app="modulethree">
+    <div>
+        <div ng-controller="myControllerthree">
+            <table>
+                <tr>
+                    <td>FirstName </td>
+                    <td><input type="text" ng-model="employee.firstn" /></td>
+                </tr>
+                <tr>
+                    <td>LastName </td>
+                    <td><input type="text" ng-model="employee.lastn" /></td>
+                </tr>
+                <tr>
+                    <td>Gender </td>
+                    <td><input type="text" ng-model="employee.gender" /></td>
+                </tr>
+
+            </table>
+            <br />
+            <br />
+
+            <table>
+                <tr>
+                    <td>FirstName </td>
+                    <td>{{employee.firstn}}</td>
+                </tr>
+                <tr>
+                    <td>LastName </td>
+                    <td>{{employee.lastn}}</td>
+                </tr>
+                <tr>
+                    <td>Gender </td>
+                    <td>{{employee.gender}}</td>
+                </tr>
+
+            </table>
+        </div>
+
+    </div>
+
+
+
+</body>
+</html>

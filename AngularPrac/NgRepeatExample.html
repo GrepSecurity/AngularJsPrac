@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+
+    <script src="Scripts/angular.min.js"></script>
+    <script src="Scripts/Script.js"></script>
+</head>
+<body ng-app="moduleFive">
+    <div ng-app="moduleFour">
+
+        <div ng-controller="myControllerfour">
+            <table>
+                <thead>
+                    <tr>
+                        <th>FirstName</th>
+                        <th>lastname</th>
+                        <th>Gender</th>
+                        <th>Salary</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="employee in employees">
+                        <td>{{employee.firstname}}</td>
+                        <td>{{employee.lastname}}</td>
+                        <td>{{employee.gender}}</td>
+                        <td>{{employee.salary}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+    </div>
+    <div>
+        <div ng-app="moduleFive">
+            <div ng-controller="myControllerfive">
+                <ul>
+                    <li ng-repeat="county in countries" ng-init="ParentIndex=$index">
+                        {{county.name}} - Index = {{$index}}
+                        <ul>
+                            <li ng-repeat="city in county.cities">
+                                {{city.name}} - Parent Index = {{ParentIndex}}, Index = {{$index}}
+                            </li>
+
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
